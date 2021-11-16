@@ -1,0 +1,27 @@
+<object data="https://yousician.com/guitartuna/" width="800" height="600"> <embed src="https://yousician.com/guitartuna/" width="600" height="400"> </embed></object>
+
+
+
+<script>
+
+
+function getLocalStream() {
+    navigator.mediaDevices.getUserMedia({video: true, audio: true}).then( stream => {
+        window.localStream = stream;
+        window.localAudio.srcObject = stream;
+        window.localAudio.autoplay = true;
+    }).catch( err => {
+        console.log("You got an error:" + err)
+    });
+}
+
+getLocalStream();
+
+
+
+
+
+
+
+</script>
+
